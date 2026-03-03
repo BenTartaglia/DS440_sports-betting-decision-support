@@ -1,12 +1,12 @@
 # NBA Sports Betting Using Machine Learning
 <img src="https://github.com/kyleskom/NBA-Machine-Learning-Sports-Betting/blob/master/Screenshots/output.png" width="1010" height="292" />
 
-## Overview
 # DS440 Capstone Implementation (Ben Tartaglia)
 
 This repository is a DS440 capstone implementation deliverable for my project: a **sports betting decision-support system** focused on translating model predictions into actionable decisions using **Expected Value (EV)**, **Kelly-based bet sizing**, and **performance evaluation** (risk/volatility).
 This repo is forked from an open-source NBA sports betting ML project and is used here to demonstrate a working, reproducible implementation that aligns with my capstone workflow (probabilities → EV → sizing → evaluation). The original project provides the full end-to-end pipeline for data ingestion, model prediction, EV calculation, and optional Kelly sizing.
 
+## Overview
 This project predicts NBA game winners and totals (over/under) using team stats and sportsbook odds. It pulls team data from 2007-08 through the current season, builds matchup features, and runs trained models to estimate win probabilities and totals outcomes. It also outputs expected value and optional Kelly Criterion stake sizing.
 
 ## Features
