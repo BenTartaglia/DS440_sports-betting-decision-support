@@ -6,11 +6,112 @@
 This repository is a DS440 capstone implementation deliverable for my project: a **sports betting decision-support system** focused on translating model predictions into actionable decisions using **Expected Value (EV)**, **Kelly-based bet sizing**, and **performance evaluation** (risk/volatility).
 This repo is forked from an open-source NBA sports betting ML project and is used here to demonstrate a working, reproducible implementation that aligns with my capstone workflow (probabilities → EV → sizing → evaluation). The original project provides the full end-to-end pipeline for data ingestion, model prediction, EV calculation, and optional Kelly sizing.
 
-# Quick Start Demo (Windows)
-This project runs on Windows with Python 3.12 using the XGBoost model (TensorFlow is not required).
-1) Clone the repo
+# Quick Demo (Windows - How To Run)
+Got it — you want **everything inside one single copy-paste block** so it drops cleanly into the README. Use this exactly:
+
+````md
+## Quick Start
+
+This project can be run locally to generate NBA betting predictions using an XGBoost model and Kelly Criterion bankroll strategy.
+
+The instructions below ensure the project runs on a fresh Windows machine using Python 3.12 (TensorFlow not required).
+
+---
+
+### 1. Clone the repository
+
+```bash
 git clone https://github.com/BenTartaglia/DS440_sports-betting-decision-support.git
 cd DS440_sports-betting-decision-support
+````
+
+---
+
+### 2. Create a virtual environment
+
+```powershell
+python -m venv venv
+```
+
+---
+
+### 3. Install dependencies
+
+```powershell
+cmd /c "venv\Scripts\activate.bat && python -m pip install --upgrade pip && python -m pip install -r requirements_notf.txt"
+```
+
+This installs all dependencies required to run the XGBoost prediction model without TensorFlow.
+
+---
+
+### 4. Run the model
+
+Run the betting model with real sportsbook odds:
+
+```powershell
+cmd /c "venv\Scripts\activate.bat && python main.py -xgb -odds=fanduel -kc"
+```
+
+The program will:
+
+* Scrape current NBA odds from FanDuel
+* Build game feature inputs from NBA statistics
+* Run the XGBoost prediction model
+* Output win probabilities and totals predictions
+* Calculate Expected Value (EV) and Kelly Criterion bankroll allocation
+
+---
+
+### Example Output
+
+```
+------------------fanduel odds data------------------
+Dallas Mavericks (530) @ Charlotte Hornets (-752)
+Washington Wizards (810) @ Orlando Magic (-1351)
+...
+
+---------------XGBoost Model Predictions---------------
+Charlotte Hornets (70.6%) vs Dallas Mavericks
+Orlando Magic (73.1%) vs Washington Wizards
+...
+
+------------Expected Value & Kelly Criterion-----------
+Dallas Mavericks EV: 84.92 Fraction of Bankroll: 16.02%
+Washington Wizards EV: 144.67 Fraction of Bankroll: 17.86%
+```
+
+---
+
+### Optional: Neural Network Model
+
+The neural network model requires TensorFlow and Python 3.11.
+
+Install dependencies with:
+
+```powershell
+pip install -r requirements.txt
+```
+
+Then run:
+
+```powershell
+python main.py -nn -odds=fanduel -kc
+```
+
+```
+
+This version will **paste perfectly into the README and render correctly on GitHub**.
+
+It also clearly demonstrates that:
+
+- the repo runs on a **fresh machine**
+- graders can **copy the commands exactly**
+- your **XGBoost demo works without TensorFlow**
+
+If you want, I can also give you a **very short “30-second demo run” section** that professors love because it lets them test the repo in **just 3 commands**.
+```
+
 
 ## Overview
 This project predicts NBA game winners and totals (over/under) using team stats and sportsbook odds. It pulls team data from 2007-08 through the current season, builds matchup features, and runs trained models to estimate win probabilities and totals outcomes. It also outputs expected value and optional Kelly Criterion stake sizing.
