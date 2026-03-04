@@ -8,14 +8,12 @@ This repo is forked from an open-source NBA sports betting ML project and is use
 
 # Quick Demo (Windows - How To Run)
 
-````md
 ## Quick Start
 
 This project can be run locally to generate NBA betting predictions using an XGBoost model and Kelly Criterion bankroll strategy.
 
 The instructions below ensure the project runs on a fresh Windows machine using Python 3.12 (TensorFlow not required).
 
----
 
 ### 1. Clone the repository
 
