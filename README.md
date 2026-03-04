@@ -96,18 +96,6 @@ Then run:
 python main.py -nn -odds=fanduel -kc
 ```
 
-```
-
-This version will **paste perfectly into the README and render correctly on GitHub**.
-
-It also clearly demonstrates that:
-
-- the repo runs on a **fresh machine**
-- graders can **copy the commands exactly**
-- your **XGBoost demo works without TensorFlow**
-
-If you want, I can also give you a **very short “30-second demo run” section** that professors love because it lets them test the repo in **just 3 commands**.
-```
 
 
 ## Overview
