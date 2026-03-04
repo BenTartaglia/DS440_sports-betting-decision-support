@@ -1,20 +1,27 @@
 @echo off
-REM DS440 Sports Betting Decision Support System Demo
+setlocal
 
-echo Creating virtual environment...
-python -m venv venv
+echo DS440 Sports Betting Decision Support - Demo (Windows)
+echo.
 
-echo Activating virtual environment...
-call venv\Scripts\activate
+if not exist venv (
+  echo Creating virtual environment...
+  python -m venv venv
+)
 
-echo Upgrading pip...
-python -m pip install --upgrade pip
+echo Installing / updating dependencies...
+cmd /c "venv\Scripts\activate.bat && python -m pip install --upgrade pip && python -m pip install -r requirements_notf.txt"
+if errorlevel 1 (
+  echo.
+  echo ERROR: Dependency installation failed.
+  pause
+  exit /b 1
+)
 
-echo Installing dependencies...
-python -m pip install -r requirements.txt
+echo Running XGBoost model with FanDuel odds...
+cmd /c "venv\Scripts\activate.bat && python main.py -xgb -odds=fanduel -kc"
 
-echo Running betting model with Kelly Criterion...
-python main.py -xgb -kc
-
+echo.
 echo Demo complete.
 pause
+endlocal
