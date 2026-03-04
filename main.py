@@ -9,7 +9,7 @@ except ImportError:
 from colorama import Fore, Style
 
 from src.DataProviders.SbrOddsProvider import SbrOddsProvider
-from src.Predict import NN_Runner, XGBoost_Runner
+from src.Predict import XGBoost_Runner
 from src.Utils.Dictionaries import team_index_current
 from src.Utils.tools import (
     create_todays_games_from_odds,
