@@ -7,7 +7,6 @@ This repository is a DS440 capstone implementation deliverable for my project: a
 This repo is forked from an open-source NBA sports betting ML project and is used here to demonstrate a working, reproducible implementation that aligns with my capstone workflow (probabilities → EV → sizing → evaluation). The original project provides the full end-to-end pipeline for data ingestion, model prediction, EV calculation, and optional Kelly sizing.
 
 # Quick Demo (Windows - How To Run)
-Got it — you want **everything inside one single copy-paste block** so it drops cleanly into the README. Use this exactly:
 
 ````md
 ## Quick Start
