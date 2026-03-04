@@ -125,12 +125,20 @@ def run_models(data, normalized_data, todays_games_uo, frame_ml, games, home_tea
         )
         print("-------------------------------------------------------")
     if args.nn:
+        if tf is None:
+            raise SystemExit(
+                "TensorFlow is not installed. Run with -xgb (recommended on Python 3.12), "
+                "or install Python 3.11 and install requirements.txt to use -nn."
+            )
+    
+        from src.Predict import NN_Runner  # import only when needed
+    
         print("------------Neural Network Model Predictions-----------")
         NN_Runner.nn_runner(
             normalized_data, todays_games_uo, frame_ml, games, home_team_odds, away_team_odds, args.kc
         )
         print("-------------------------------------------------------")
-
+    
 
 def main(args):
     odds = None
