@@ -2,7 +2,10 @@ import argparse
 from datetime import datetime, timedelta
 
 import pandas as pd
-import tensorflow as tf
+try:
+    import tensorflow as tf
+except ImportError:
+    tf = None
 from colorama import Fore, Style
 
 from src.DataProviders.SbrOddsProvider import SbrOddsProvider
