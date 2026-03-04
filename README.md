@@ -9,10 +9,8 @@ This repo is forked from an open-source NBA sports betting ML project and is use
 # Quick Start Demo (Windows)
 This project runs on Windows with Python 3.12 using the XGBoost model (TensorFlow is not required).
 1) Clone the repo
-```bash
 git clone https://github.com/BenTartaglia/DS440_sports-betting-decision-support.git
 cd DS440_sports-betting-decision-support
-'''
 
 ## Overview
 This project predicts NBA game winners and totals (over/under) using team stats and sportsbook odds. It pulls team data from 2007-08 through the current season, builds matchup features, and runs trained models to estimate win probabilities and totals outcomes. It also outputs expected value and optional Kelly Criterion stake sizing.
