@@ -160,7 +160,13 @@ def main(args):
         args.xgb = True
         args.nn = True
 
-    normalized_data = tf.keras.utils.normalize(data, axis=1) if args.nn else None
+    normalized_data = None
+    if args.nn:
+        if tf is None:
+            raise SystemExit(
+                "TensorFlow is not installed. Run with -xgb, or install Python 3.11 + requirements.txt for -nn."
+            )
+    normalized_data = tf.keras.utils.normalize(data, axis=1)
     run_models(
         data,
         normalized_data,
