@@ -123,7 +123,7 @@ Install dependencies:
 pip3 install -r requirements.txt
 ```
 
-## Quick start
+## Quick start Cont. (Alternative)
 ```bash
 python3 main.py -xgb -odds=fanduel
 ```
