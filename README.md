@@ -95,8 +95,8 @@ Then run:
 ```powershell
 python main.py -nn -odds=fanduel -kc
 ```
-
-
+## One-Click Run (If desired)
+Double-click `run_demo.bat` to install dependencies and run the XGBoost model using FanDuel odds.
 
 ## Overview
 This project predicts NBA game winners and totals (over/under) using team stats and sportsbook odds. It pulls team data from 2007-08 through the current season, builds matchup features, and runs trained models to estimate win probabilities and totals outcomes. It also outputs expected value and optional Kelly Criterion stake sizing.
